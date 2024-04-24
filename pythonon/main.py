@@ -14,9 +14,14 @@ class App(QMainWindow):
         self.Change_btn.clicked.connect(self.Change_btn_did)
         self.Change_key = QShortcut(QKeySequence('Ctrl+S'), self)
         self.Change_key.activated.connect(self.Change_btn_did)
+        self.path_lable.clicked.connect(self.cope_path)
         self.path_lable.setText('Путь')
 
-        self.proverka_puti = None   #Ты думал тут что-то будет, НЕТ
+        self.proverka_puti = None
+
+    def cope_path(self):
+        text = self.path_lable.text()
+        QApplication.clipboard().setText(text)
 
     def Save_btn_did(self):
         try:
