@@ -25,7 +25,7 @@ class App(QMainWindow):
 
     def Save_btn_did(self):
         try:
-            filename = QFileDialog.getSaveFileName(self, "Save File", "", "Text Files (*.txt)")[0]
+            filename = QFileDialog.getSaveFileName(self, "Save File", "", "File (*.txt) \n Huiy File (*.xui)")[0]
             text_file = self.textEdit.toPlainText()
             with open(filename, 'w') as fuck_3:
                 fuck_3.write(text_file)
@@ -37,7 +37,7 @@ class App(QMainWindow):
 
     def Open_btn_did(self):
         try:
-            filename = QFileDialog.getOpenFileName(self, "Open File", "", "Text Files (*.txt)")[0]
+            filename = QFileDialog.getOpenFileName(self, "Open File", "", "File (*.txt) \n Huiy File (*.xui)")[0]
             with open(filename, 'r') as fuck:
                 text_file = fuck.read()
                 self.textEdit.setText(text_file)
